@@ -1,0 +1,1375 @@
+{
+  "info": {
+    "_postman_id": "citas-api-individual-senati",
+    "name": "citas-api",
+    "description": "Colección completa de pruebas para citas-api por cada una de las 4 ramas según guía SENATI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "rama 1 · login y servicios",
+      "item": [
+        {
+          "name": "1 Login gerente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"gerente@terapias.pe\",\n  \"password\": \"Clave123\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2 Login admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@terapias.pe\",\n  \"password\": \"Clave123\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3 Login contraseña incorrecta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"gerente@terapias.pe\",\n  \"password\": \"otra\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4 Login correo que no existe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"nadie@terapias.pe\",\n  \"password\": \"Clave123\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5 Login usuario inactivo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"diego.ramirez@terapias.pe\",\n  \"password\": \"Clave123\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6 Login rol no permitido (cliente)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"ana.quispe@correo.com\",\n  \"password\": \"Clave123\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7 Login sin datos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8 Servicios: listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9 Servicios: activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/activos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10 Servicios: buscar por título",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/buscar?titulo=terapia",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "titulo",
+                  "value": "terapia"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "11 Servicios: obtener 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12 Servicios: obtener 999",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13 Servicios: crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Reflexología\",\n  \"descripcion\": \"Masaje en puntos de los pies\",\n  \"costo\": 85.0,\n  \"duracion\": 40,\n  \"foto\": null,\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "14 Servicios: crear título repetido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Reflexología\",\n  \"descripcion\": \"Masaje en puntos de los pies\",\n  \"costo\": 85.0,\n  \"duracion\": 40,\n  \"foto\": null,\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "15 Servicios: crear con datos inválidos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"\",\n  \"costo\": -5,\n  \"duracion\": 5\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "16 Servicios: actualizar el creado",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/9",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "9"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Reflexología\",\n  \"descripcion\": \"Masaje en puntos de los pies\",\n  \"costo\": 90.0,\n  \"duracion\": 40,\n  \"foto\": null,\n  \"activo\": false\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "17 Servicios: actualizar 999",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "999"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Reflexología\",\n  \"descripcion\": \"Masaje en puntos de los pies\",\n  \"costo\": 85.0,\n  \"duracion\": 40,\n  \"foto\": null,\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "18 Servicios: eliminar 1 (está en uso)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "19 Servicios: eliminar el creado",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/9",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "20 Servicios: eliminar otra vez",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/9",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "rama 2 · terapistas",
+      "item": [
+        {
+          "name": "1 Terapistas: listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2 Terapistas: activas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/activos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3 Terapistas: buscar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/buscar?texto=gut",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "texto",
+                  "value": "gut"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4 Terapistas: obtener 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5 Terapistas: obtener 999",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6 Terapistas: crear con DNI repetido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 23,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"41257893\",\n  \"telefono\": \"987100207\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7 Terapistas: crear (usuario 23)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 23,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"49012345\",\n  \"telefono\": \"987100207\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8 Terapistas: crear con el mismo usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 23,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"49012346\",\n  \"telefono\": \"987100207\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9 Terapistas: usuario sin rol TERAPISTA",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 13,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"49012347\",\n  \"telefono\": \"987100207\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10 Terapistas: usuario que no existe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 999,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"49012348\",\n  \"telefono\": \"987100207\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "11 Terapistas: DNI y celular inválidos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 23,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"123\",\n  \"telefono\": \"12345\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12 Terapistas: actualizar la creada",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "7"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 23,\n  \"nombres\": \"Valeria\",\n  \"apellidos\": \"Torres Rojas\",\n  \"dni\": \"49012345\",\n  \"telefono\": \"987100299\",\n  \"activo\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13 Terapistas: eliminar 1 (tiene citas)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "14 Terapistas: eliminar la creada",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapistas/7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapistas",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "rama 3 · horarios",
+      "item": [
+        {
+          "name": "1 Horarios: listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2 Horarios: de la terapista 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/terapista/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "terapista",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3 Horarios: del sábado (6)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/dia/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "dia",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4 Horarios: obtener 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5 Horarios: obtener 999",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6 Horarios: crear (terapista 6, lunes)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 6,\n  \"diaSemana\": 1,\n  \"horaInicio\": \"08:00\",\n  \"horaFin\": \"12:00\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7 Horarios: mismo día repetido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 6,\n  \"diaSemana\": 1,\n  \"horaInicio\": \"14:00\",\n  \"horaFin\": \"18:00\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8 Horarios: inicio después del fin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 6,\n  \"diaSemana\": 2,\n  \"horaInicio\": \"15:00\",\n  \"horaFin\": \"10:00\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9 Horarios: terapista que no existe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 999,\n  \"diaSemana\": 2,\n  \"horaInicio\": \"08:00\",\n  \"horaFin\": \"12:00\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10 Horarios: día 8",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 6,\n  \"diaSemana\": 8,\n  \"horaInicio\": \"08:00\",\n  \"horaFin\": \"12:00\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "11 Horarios: actualizar el creado",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/32",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "32"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 6,\n  \"diaSemana\": 1,\n  \"horaInicio\": \"09:00\",\n  \"horaFin\": \"13:00\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12 Horarios: eliminar el creado",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/32",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "32"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13 Horarios: eliminar otra vez",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/horarios/32",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "horarios",
+                "32"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "rama 4 · servicios de cada terapista",
+      "item": [
+        {
+          "name": "1 Asignaciones: listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2 Asignaciones: de la terapista 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios/terapista/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios",
+                "terapista",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3 Asignaciones: del servicio 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios/servicio/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios",
+                "servicio",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4 Asignaciones: obtener 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5 Asignaciones: obtener 999",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios/999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6 Asignaciones: crear (terapista 2 + servicio 1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 2,\n  \"servicioId\": 1\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7 Asignaciones: repetida",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 2,\n  \"servicioId\": 1\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8 Asignaciones: servicio que no existe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terapistaId\": 2,\n  \"servicioId\": 999\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9 Asignaciones: sin terapista",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"servicioId\": 1\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10 Asignaciones: eliminar la creada",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/terapista-servicios/15",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "terapista-servicios",
+                "15"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
